@@ -106,29 +106,7 @@ class BottomPart extends StatelessWidget {
                   PasswordField(),
                   RepeatPasswordField(),
                   SigninButton(),
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 4,
-                        child: CheckboxListTile(
-                          value: false,
-                          onChanged: null,
-                          title: Text("Stay connected"),
-                          controlAffinity: ListTileControlAffinity.leading,
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          "Forgot password",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16
-                          ),
-                        ),
-                        flex: 2,
-                      )
-                    ],
-                  )
+                  ForgotPassword()
                 ],
               ),
             ),
@@ -136,6 +114,39 @@ class BottomPart extends StatelessWidget {
         ],
       ),
       flex: 6,
+    );
+  }
+}
+
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Expanded(
+          flex: 4,
+          child: CheckboxListTile(
+            value: false,
+            onChanged: null,
+            title: Text("Stay connected"),
+            controlAffinity: ListTileControlAffinity.leading,
+          ),
+        ),
+        Expanded(
+          child: Text(
+            "Forgot password",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16
+            ),
+          ),
+          flex: 2,
+        )
+      ],
     );
   }
 }
